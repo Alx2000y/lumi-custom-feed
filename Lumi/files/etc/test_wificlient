@@ -1,0 +1,29 @@
+#!/bin/sh
+
+mode=`uci get wireless.@wifi-iface[-1].mode`
+wlan="wlan0"
+
+
+if [ "$mode" = "ap" ]; then 
+    echo "ap";
+else
+	if ifconfig $wlan | grep -q "inet addr:" ; then
+		echo "$wlan connected"
+	else
+		echo "$wlan not connected\n"
+		sleep 15
+		if ifconfig $wlan | grep -q "inet addr:" ; then
+			echo "1..2.. connected"
+		else
+			echo "Fail connect"
+			wifi down
+			uci set wireless.@wifi-device[0].disabled=0
+			uci set wireless.@wifi-iface[-1].mode=ap
+			uci set wireless.@wifi-iface[-1].ssid=LumiWrt
+			uci set wireless.@wifi-iface[-1].encryption=none
+			uci set wireless.@wifi-iface[-1].key=0123456789
+			uci commit wireless
+			wifi up
+		fi
+	fi
+fi

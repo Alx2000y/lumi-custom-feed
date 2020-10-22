@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/etc/enablestart
+rm /www/index.html
+cp /www/index.cyber /www/index.html
+
+chmod -x /etc/init.d/lumistart

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mv /etc/rc.local /etc/rc.local.bak
+rm /etc/rc.local
+cp /etc/rc.local.lumi /etc/rc.local
+

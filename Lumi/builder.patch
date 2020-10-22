@@ -1,0 +1,10 @@
+--- Makefile.orig	2018-10-16 17:49:57.000000000 +0300
++++ Makefile	2018-10-16 17:50:20.000000000 +0300
+@@ -66,6 +66,7 @@
+ OPKG:=$(call opkg,$(TARGET_DIR)) \
+ 	-f $(TOPDIR)/repositories.conf \
+ 	--cache $(DL_DIR) \
++	--force-overwrite \
+ 	--lists-dir $(LISTS_DIR)
+ 
+ include $(INCLUDE_DIR)/target.mk

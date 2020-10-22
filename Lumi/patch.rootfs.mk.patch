@@ -1,0 +1,10 @@
+--- include/rootfs.bak	2018-12-07 14:25:08 +0300
++++ include/rootfs.mk	2018-12-13 20:15:46 +0300
+@@ -39,6 +39,7 @@
+   $(STAGING_DIR_HOST)/bin/opkg \
+ 	--offline-root $(1) \
+ 	--force-postinstall \
++	--force-overwrite \
+ 	--add-dest root:/ \
+ 	--add-arch all:100 \
+ 	--add-arch $(if $(ARCH_PACKAGES),$(ARCH_PACKAGES),$(BOARD)):200
