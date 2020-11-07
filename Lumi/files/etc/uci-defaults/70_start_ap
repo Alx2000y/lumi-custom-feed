@@ -7,7 +7,7 @@ uci commit wireless
 wifi up
 
 uci set system.@system[0]=system
-uci set system.@system[0].timezone=MSK-4
+uci set system.@system[0].timezone=MSK-3
 
 uci delete system.ntp
 uci set system.ntp=timeserver
@@ -26,3 +26,5 @@ uci commit network
 
 /etc/enablestart
 exit 0
+
+
