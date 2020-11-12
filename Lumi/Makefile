@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=Lumi
 PKG_RELEASE:=2
-
+PKG_MAINTAINER:=Alexey Sadkov <alx.v.sadkov@gmail.com>
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk

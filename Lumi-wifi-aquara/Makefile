@@ -6,7 +6,7 @@ PKG_RELEASE=2
 PKG_LICENSE:=GPLv2
 PKG_LICENSE_FILES:=
 
-PKG_MAINTAINER:=Ben Greear <greearb@candelatech.com>
+PKG_MAINTAINER:=Alexey Sadkov <alx.v.sadkov@gmail.com>
 PKG_BUILD_PARALLEL:=1
 
 STAMP_CONFIGURED_DEPENDS := $(STAGING_DIR)/usr/include/mac80211-backport/backport/autoconf.h
