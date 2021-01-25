@@ -6,9 +6,8 @@ station=`echo "$QUERY_STRING" | sed -n 's/^.*station=\([^&]*\).*$/\1/p' | sed "s
 vol=`echo "$QUERY_STRING" | sed -n 's/^.*vol=\([^&]*\).*$/\1/p'`
 ivol=$(($vol+50))
 stop=`echo "$QUERY_STRING" | sed -n 's/^.*stop=\([^&]*\).*$/\1/p'`
-avol=$(($ivol*2))
 echo "<FONT color=979797 size=6>Громкость: $ivol</FONT>"
-killall mpg123
-`killall radio.cgi & amixer -c 0 sset Master,0 Playback Volume $avol  & mpg123 $station &`
+killall madplay
+`killall radio.cgi & wget -O - $station | madplay --attenuate=$vol - -Q --no-tty-control &`
 
 
