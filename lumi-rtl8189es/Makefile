@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=Lumi-wifi-aquara
+PKG_NAME:=lumi-rtl8189es
 PKG_RELEASE=2
 
 PKG_LICENSE:=GPLv2
@@ -14,7 +14,7 @@ STAMP_CONFIGURED_DEPENDS := $(STAGING_DIR)/usr/include/mac80211-backport/backpor
 include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/package.mk
 
-define KernelPackage/Lumi-wifi-aquara
+define KernelPackage/lumi-rtl8189es
   SUBMENU:=Lumi
   TITLE:=Wireless Drivers for Xiaomi Lumi Gw Realtek rtl8189es and ...
   DEPENDS:=+kmod-cfg80211 +@DRIVER_11N_SUPPORT
@@ -43,4 +43,4 @@ define Build/Compile
 		modules
 endef
 
-$(eval $(call KernelPackage,Lumi-wifi-aquara))
+$(eval $(call KernelPackage,lumi-rtl8189es))
